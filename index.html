@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>isoSpace</title>
+		<style>
+			html, body {
+				padding: 0;
+				margin: 0;
+			}
+
+			canvas {
+				display: block;
+				margin: auto auto;
+			}
+		</style>
+		
+		<script type="text/javascript" src="managers/gamemanager.js"></script>
+		<script type="text/javascript" src="managers/statemanager.js"></script>
+		
+		<script type="text/javascript" src="state.js"></script>
+		<script type="text/javascript" src="point.js"></script>
+		<script type="text/javascript" src="object.js"></script>
+		<script type="text/javascript" src="renderer.js"></script>
+		<script type="text/javascript" src="timer.js"></script>
+		<script type="text/javascript" src="utils.js"></script>
+		
+		<script type="text/javascript" src="states/menu.js"></script>
+		<script type="text/javascript" src="states/space.js"></script>
+		
+		<script type="text/javascript" src="gameobjects/space.js"></script>
+		<script type="text/javascript" src="gameobjects/grid.js"></script>
+		<script type="text/javascript" src="gameobjects/tile.js"></script>
+		<script type="text/javascript" src="gameobjects/person.js"></script>
+		
+		<script type="text/javascript">
+			var debug, space, renderer;
+			
+			function ready()
+			{
+				gamemanager = new GameManager();
+				
+				gamemanager.statemanager.create('Space');
+				gamemanager.statemanager.switchTo('Space');
+				
+				gamemanager.start();
+			}
+		</script>
+	</head>
+	<body onload="ready();" oncontextmenu="return false;"></body>
+</html>
